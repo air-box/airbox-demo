@@ -50,7 +50,8 @@
       listen [::]:80;
       server_name keyless-demo.com www.keyless-demo.com;
       return 302 https://$server_name$request_uri;
-  }```
+  }
+  ```
 
 
 5. Run nginx
