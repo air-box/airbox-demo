@@ -2,7 +2,7 @@
 
 ## Keyless nginx 
 1. Clone keyless-demo
-```git clone https://github.com/air-box/keyless-demo.git"
+```git clone https://github.com/air-box/keyless-demo.git```
 
 2. Get & build AirBox keyless components
 ```$ cd keyless-demo```
