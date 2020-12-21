@@ -36,7 +36,8 @@
 
   Add the following configuration file to /etc/nginx/sites-available/keyless-demo.com
 
-  ```server {
+  ```
+  server {
       listen 443 ssl;
       listen [::]:443 ssl;
       include snippets/self-signed.conf;
