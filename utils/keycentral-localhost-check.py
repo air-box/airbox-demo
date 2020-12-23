@@ -18,31 +18,31 @@ s.setblocking(1)
 #tv = struct.pack('ii', int(6), int(0))
 #connection.setsockopt(socket.SOL_SOCKET, socket.SO_RCVTIMEO, tv)
 
-print "[Connected] " , connection.getpeername()
-print "[State] " , connection.get_state_string()
+print("[Connected] ", connection.getpeername())
+print("[State] ", connection.get_state_string())
 
 try:
-    print "Starting Handshake"
+    print("Starting Handshake ...")
     connection.do_handshake()
+    print("Completed Handshake")
 except OpenSSL.SSL.WantReadError:
-    print "Timeout"
+    print("Timeout")
     quit()
 
-print "[State] " , connection.get_state_string()
+print("[State] " , connection.get_state_string())
 
 # Send question
-print "-------------------------------------------------------"
-print "Transmitted %d bytes" %  connection.send("koekoek\r\n")
+print("-------------------------------------------------------")
+print("Transmitted %d bytes" %  connection.send("koekoek\r\n"))
 
 # Expect result 
 try:
     recvstr = connection.recv(1024)
 except OpenSSL.SSL.WantReadError:
-    print "Timeout"
+    print("Timeout")
     quit()
 
 # Print response 
-print "Response from Keycentral: "
-print recvstr
-print "-------------------------------------------------------"
+print("Response from Keycentral: ", recvstr)
+print("-------------------------------------------------------")
 
