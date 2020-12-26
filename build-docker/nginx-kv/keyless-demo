@@ -1,0 +1,20 @@
+server {
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	include snippets/self-signed.conf;
+	include snippets/ssl-params.conf;
+
+	server_name keyless-demo.com www.keyless-demo.com;
+
+	root /home/ketanbj/keyless-demo/static-html;
+	index index.html index.htm;
+}
+
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name keyless-demo.com www.keyless-demo.com;
+
+	return 302 https://$server_name$request_uri;
+}  
