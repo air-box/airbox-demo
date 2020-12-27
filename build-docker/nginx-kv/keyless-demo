@@ -6,7 +6,7 @@ server {
 
 	server_name keyless-demo.com www.keyless-demo.com;
 
-	root /home/ketanbj/keyless-demo/static-html;
+	root /home/kvdemo/keyless-demo/static-html;
 	index index.html index.htm;
 }
 

@@ -23,14 +23,22 @@ COPY nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
 COPY nginx-selfsigned.conf /etc/nginx/snippets/self-signed.conf
 COPY nginx-sslparams.conf /etc/nginx/snippets/ssl-params.conf
 COPY nginx-dhparam.pem /etc/ssl/certs/dhparam.pem
+
+# get dependencies
+RUN \
+  apt-get install -y build-essential libssl-dev
+
 # get keyless demo
 RUN \
   mkdir -p /home/kvdemo && \
   cd /home/kvdemo && \
-  git clone https://github.com/air-box/keyless-demo && \
-  cd keyless-demo &&\
-  chmod +x get.sh
-#  ./get.sh requires password
+  git clone https://github.com/air-box/keyless-demo
+
+#copy keyvisor library
+RUN \
+  mkdir -p /home/keyvisor && cd /home/keyvisor
+
+COPY keyvisor.so /home/keyvisor/keyvisor.so
 
 # Expose port
 EXPOSE 80
@@ -38,6 +46,6 @@ EXPOSE 80
 RUN \
   service nginx stop
 
-CMD /usr/sbin/nginx
+#CMD /usr/sbin/nginx
 
-#CMD ["LD_PRELOAD=~/air-box/keyvisor/keyvisor.so nginx"]
+ENTRYPOINT /home/kvdemo/run.sh
