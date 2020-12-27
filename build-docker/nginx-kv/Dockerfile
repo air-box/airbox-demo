@@ -32,7 +32,9 @@ RUN \
 RUN \
   mkdir -p /home/kvdemo && \
   cd /home/kvdemo && \
-  git clone https://github.com/air-box/keyless-demo
+  git clone https://github.com/air-box/keyless-demo &&\
+  
+  echo "Gotten keyless demo"
 
 #copy keyvisor library
 RUN \
@@ -48,4 +50,7 @@ RUN \
 
 #CMD /usr/sbin/nginx
 
-ENTRYPOINT /home/kvdemo/run.sh
+RUN ["chmod", "+x", "/home/kvdemo/keyless-demo/run.sh"]
+
+
+ENTRYPOINT /home/kvdemo/keyless-demo/run.sh
