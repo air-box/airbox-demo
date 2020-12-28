@@ -33,7 +33,6 @@ RUN \
   mkdir -p /home/kvdemo && \
   cd /home/kvdemo && \
   git clone https://github.com/air-box/keyless-demo &&\
-  
   echo "Gotten keyless demo"
 
 #copy keyvisor library
@@ -41,6 +40,7 @@ RUN \
   mkdir -p /home/keyvisor && cd /home/keyvisor
 
 COPY keyvisor.so /home/keyvisor/keyvisor.so
+COPY keyvisor.conf /home/keyvisor/keyvisor.conf
 
 # Expose port
 EXPOSE 80
@@ -52,5 +52,6 @@ RUN \
 
 RUN ["chmod", "+x", "/home/kvdemo/keyless-demo/run.sh"]
 
+WORKDIR /home/keyvisor 
 
 ENTRYPOINT /home/kvdemo/keyless-demo/run.sh
