@@ -10,7 +10,7 @@ This demo uses Google Compute Engine (GCE) & Google Kubernetes Engine (GKE) envi
 
 ## Running vanilla nginx server vs. keyless nginx server
 
-<mark> vanilla: ```$ nginx``` vs. Keyless nginx: ```keyless nginx``` <mark>
+<span style="background-color: #FFFF00"> vanilla: ```$ nginx``` vs. Keyless nginx: ```$ keyless nginx``` </span>
 
 ## Detailed instructions to run demo on GCE VMs
 
