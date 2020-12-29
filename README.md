@@ -76,8 +76,9 @@ Useful tip: For your convinience you can also setup nginx with following provide
   
 6. Run Keyless nginx server
   ```
-  cd keyless-demo
-  keyless-run nginx
+  $ cd keyless-demo
+  $ chmod +x keyless
+  $ keyless nginx
   ```
 
 8. Test from your desktop terminal 
