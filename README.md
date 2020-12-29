@@ -30,9 +30,11 @@ Keyless nginx: ```keyless nginx```
 4. From your keycentral VM instance (using SSH), run KeyCentral backend on VM
 
 - Binary:
-  ```$ mkdir -p ~/air-box/```
-  ```$ cp build-docker/keycentral/keycentral ~/air-box```
-  ```$ cd ~/air-box && ./keycentral```
+  ```
+  $ mkdir -p ~/air-box/
+  $ cp build-docker/keycentral/keycentral ~/air-box
+  $ cd ~/air-box && ./keycentral
+  ```
 
 - From source: TODO (available on request)
 
