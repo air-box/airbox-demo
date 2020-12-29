@@ -39,12 +39,16 @@ Keyless nginx: ```keyless nginx```
 5. From your nginx-kv VM instance, install Keyless on nginx-kv VM
 
 - Binary: 
-  ```mkdir -p ~/air-box/```
-  ```cp build-docker/nginx-kv/keyvisor.so ~/air-box/```
-  ```cp build-docker/nginx-kv/keyvisor.conf ~/air-box/```
+  ```
+  mkdir -p ~/air-box/
+  cp build-docker/nginx-kv/keyvisor.so ~/air-box/
+  cp build-docker/nginx-kv/keyvisor.conf ~/air-box/
+  ```
   - Edit keyvisor.conf to set external IP address of your keycentral VM for keyvisor
-  ```ip:<External IP address of KeyCentral VM>
-     port:4433```
+  ```
+  ip:<External IP address of KeyCentral VM>
+  port:4433
+  ```
 
 - From source: TODO (available on request)
 
@@ -53,20 +57,26 @@ Useful tip: For your convinience you can also setup nginx with following provide
   - Install 
     ```sudo apt-get-install nginx```
   - Configure  
-    ```$ cp build-docker/nginx-kv/nginx-selfsigned.conf /etc/nginx/snippets/self-signed.conf```
-    ```$ cp build-docker/nginx-kv/nginx-sslparams.conf /etc/nginx/snippets/ssl-params.conf```
+    ```
+    $ cp build-docker/nginx-kv/nginx-selfsigned.conf /etc/nginx/snippets/self-signed.conf
+    $ cp build-docker/nginx-kv/nginx-sslparams.conf /etc/nginx/snippets/ssl-params.conf
+    ```
   - Add self signed certs for demo
-    ```$ cp build-docker/nginx-kv/nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt```
-    ```$ cp build-docker/nginx-kv/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key```
-    ```$ cp build-docker/nginx-kv/nginx-dhparam.pem /etc/ssl/certs/dhparam.pem```
+    ```
+    $ cp build-docker/nginx-kv/nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt
+    $ cp build-docker/nginx-kv/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
+    $ cp build-docker/nginx-kv/nginx-dhparam.pem /etc/ssl/certs/dhparam.pem
+    ```
   - check vanilla nginx installation
 ```$ nginx ```
   - Test nginx -- From your desktop terminal
   ```$ curl -k https://<nginx-kv VM's external IP address>```
   
 6. Run Keyless nginx server
-```cd keyless-demo```
-```keyless-run nginx```
+  ```
+  cd keyless-demo
+  keyless-run nginx
+  ```
 
 8. Test from your desktop terminal 
 ```$ curl -k https://<nginx-kv VM's external IP address>```
@@ -97,13 +107,17 @@ You should see the following output:
 
 2. Build Docker container images:
   i) On nginx-kv VM
-    ```$ cd keyless-demo/nginx-kv```
-    ```$ docker build . -t nginix-kv```
+    ```
+    $ cd keyless-demo/nginx-kv
+    $ docker build . -t nginix-kv
+    ```
 
   ii) On Keycentral VM:
-    ```$ cd keyless-demo/keycentral
-    ```$ docker build
-
+    ```
+    $ cd keyless-demo/keycentral
+    $ docker build
+    ```
+    
 3. Run container:
   i) On nginx-kv VM
 ```$ docker run nginx-kv -p 4433:4433```
