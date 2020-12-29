@@ -8,11 +8,13 @@ The PoC demo uses the following software components in ubunutu 18.04 LTS environ
 
 This demo uses Google Compute Engine (GCE) & Google Kubernetes Engine (GKE) environments.
 
-## Running vanilla nginx server vs. keyless nginx server
+## Vanilla vs. Keyless 
 
-<span style="background-color: #FFFF00"> vanilla: ```$ nginx``` vs. Keyless nginx: ```$ keyless nginx``` </span>
+Running Nginx server w/ daemon mode off from commandline:
 
-## Detailed instructions to run demo on GCE VMs
+### vanilla: ```$ nginx``` vs. Keyless nginx: ```$ keyless nginx``` ###
+
+## Detailed instructions -- GCE VM Demo
 
 1. [Create](https://cloud.google.com/compute/docs/instances/create-start-instance) and [Connect](https://cloud.google.com/compute/docs/instances/connecting-to-instance) to 2 GCE VM instances
   i) VM for nginx app (nginx-kv)
