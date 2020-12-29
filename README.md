@@ -42,9 +42,9 @@ Keyless nginx: ```keyless nginx```
 
 - Binary: 
   ```
-  mkdir -p ~/air-box/
-  cp build-docker/nginx-kv/keyvisor.so ~/air-box/
-  cp build-docker/nginx-kv/keyvisor.conf ~/air-box/
+  $ mkdir -p ~/air-box/
+  $ cp build-docker/nginx-kv/keyvisor.so ~/air-box/
+  $ cp build-docker/nginx-kv/keyvisor.conf ~/air-box/
   ```
   - Edit keyvisor.conf to set external IP address of your keycentral VM for keyvisor
   ```
