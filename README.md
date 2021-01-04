@@ -19,7 +19,8 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
 1. [Create](https://cloud.google.com/compute/docs/instances/create-start-instance) and [Connect](https://cloud.google.com/compute/docs/instances/connecting-to-instance) to 2 GCE VM instances
   i) VM for nginx app (nginx-kv)
   ii) VM to run keycentral app (keycentral)
-  NOTE: Ensure to set rules for HTTP/HTTPS connections in firewall configuration for both & add rule to accept all traffic on port 4433 on keycentral VM
+  
+  NOTE: Ensure rules for HTTP/HTTPS connections in firewall configuration for both & add rule to accept all traffic on port 4433 on keycentral VM
 
 2. For both your VM instances (using SSH) 
   - clone this repository
