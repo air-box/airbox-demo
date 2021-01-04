@@ -99,7 +99,7 @@ In both cases i.e., with vanilla nginx andd nginx with keyless, you should see t
 </html>
 ```
 
-## Detailed instructions to run demo with Docker containers in GCE VMs
+## Detailed instructions -- Docker containers in GCE VMs
 
 1. 1. [Create](https://cloud.google.com/compute/docs/instances/create-start-instance) and [Connect](https://cloud.google.com/compute/docs/instances/connecting-to-instance) to 2 GCE VM instances
   i) VM for nginx app container (nginx-kv)
@@ -145,4 +145,4 @@ You should see the following output:
 </body>
 </html>
 ```
-## Kubernetes
+## Detailed instructions -- Kubernetes (GKE) managed Docker containers 
