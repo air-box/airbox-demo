@@ -85,7 +85,7 @@ Useful tip: For your convinience you can also setup nginx with following provide
 8. Test from your desktop terminal 
 ```$ curl -k https://<nginx-kv VM's external IP address>```
 
-You should see the following output:
+In both cases i.e., with vanilla nginx andd nginx with keyless, you should see the same output as below:
 ```
 <html>
   <head>
