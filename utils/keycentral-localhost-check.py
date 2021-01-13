@@ -9,7 +9,7 @@ context = OpenSSL.SSL.Context(OpenSSL.SSL.TLSv1_METHOD)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(5)
 connection = OpenSSL.SSL.Connection(context,s)
-connection.connect(("35.231.148.151",4433))
+connection.connect(("35.231.30.138",4433))
 
 # Put the socket in blocking mode
 s.setblocking(1)
