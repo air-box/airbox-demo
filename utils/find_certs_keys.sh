@@ -19,8 +19,8 @@ keycount=0
 echo "------------------------"
 echo "Searching for all non-system .pem files"
 
-find / -name *.pem
-found=$(find / -name *.pem | grep -v -E 'docker|snap|python|Root|grep|Certification_Authority|CA|ssl|crda|ubuntu')
+find / -name "*.pem"
+found=$(find / -name "*.pem" | grep -v -E 'docker|snap|python|Root|grep|Certification_Authority|CA|ssl|crda|ubuntu')
 
 echo "Checking only non-system .pem files"
 
@@ -37,8 +37,8 @@ done
 echo "------------------------"
 echo "Checking all .crt files"
 echo "------------------------"
-find / -name *.crt
-found=$(find / -name *.crt | grep -v -E 'docker|mozilla|snap|grub|doc')
+find / -name "*.crt"
+found=$(find / -name "*.crt" | grep -v -E 'docker|mozilla|snap|grub|doc')
 
 for file in ${found}
 do
@@ -53,8 +53,8 @@ done
 echo "------------------------"
 echo "checking for all .key files"
 echo "------------------------"
-find / -name *.key
-found=$(find / -name *.key | grep -v -E 'docker|google')
+find / -name "*.key"
+found=$(find / -name "*.key" | grep -v -E 'docker|google')
 for file in ${found}
 do
 	((keycount=keycount+1))
