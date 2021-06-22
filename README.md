@@ -55,23 +55,42 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
 
 - From source: TODO (available on request)
 
-- Setup vanilla nginx on VM. You can choose any configuration, certs params etc.
-Useful tip: For your convinience you can also setup nginx with following provided files on Ubuntu 18.04 LTS
+- Setup vanilla nginx on VM. 
+
+You can choose any configuration, certs params to serve a static website etc.  This demo uses the following:
+
   - Install 
     ```sudo apt-get-install nginx```
+    
   - Configure  
+    
+    1. Turn off daemon mode
+    ```
+    $ service nginx stop
+    $ vi /etc/nginx/nginx.conf
+    ```
+    Add ```daemon off``` at top of the file and save it.
+    
+    2. Add TLS configuration to use self signed certs
     ```
     $ cp build-docker/nginx-kv/nginx-selfsigned.conf /etc/nginx/snippets/self-signed.conf
     $ cp build-docker/nginx-kv/nginx-sslparams.conf /etc/nginx/snippets/ssl-params.conf
     ```
-  - Add self signed certs for demo
+    3. Add self signed certs for demo
     ```
     $ cp build-docker/nginx-kv/nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt
     $ cp build-docker/nginx-kv/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
     $ cp build-docker/nginx-kv/nginx-dhparam.pem /etc/ssl/certs/dhparam.pem
     ```
-  - check vanilla nginx installation
-```$ nginx ```
+    4. Add static demo website
+    ```
+    $ rm /etc/nginx/sites-enabled/default
+    $ cp build-docker/nginx-kv/keyless-demo /etc/nginx/sites-enabled/keyless-demo
+    ```
+  
+  - Check vanilla nginx installation
+  ```$ nginx ```
+  
   - Test nginx -- From your desktop terminal
   ```$ curl -k https://<nginx-kv VM's external IP address>```
   
@@ -124,13 +143,13 @@ In both cases i.e., with vanilla nginx andd nginx with keyless, you should see t
     
 3. Run container:
   i) On nginx-kv VM
-```$ docker run nginx-kv -p 4433:4433```
+```$ docker run --rm --net=host nginx-kv```
 
   ii) On Keycentral VM:
-```$ docker run keycentral -p 4433:4433```
+```$ docker run --rm --net=host keycentral```
 
 4. Test from your desktop terminal 
-```$ curl -k https://<nginx-kv container external IP address>```
+```$ curl -k https://<nginx-kv IP address of VM running container>```
 
 You should see the following output:
 ```
