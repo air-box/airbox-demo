@@ -33,7 +33,9 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
 - Binary:
   ```
   $ mkdir -p ~/air-box/
-  $ cp build-docker/keycentral/keycentral ~/air-box
+  $ cp build-docker/keycentral/keycentral ~/air-box/keycentral
+  $ cp build-docker/keycentral/cert.pem ~/air-box/cert.pem
+  $ cp build-docker/keycentral/key.pem ~/air-box/key.pem
   $ cd ~/air-box && ./keycentral
   ```
 
