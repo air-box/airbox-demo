@@ -98,7 +98,8 @@ You can choose any configuration, certs params to serve a static website etc.  T
   
 6. Run Keyless nginx server
   ```
-  $ cd keyless-demo
+  $ cp keyless-demo/keyless ~/air-box/
+  $ cd ~/air-box
   $ chmod +x keyless
   $ keyless nginx
   ```
