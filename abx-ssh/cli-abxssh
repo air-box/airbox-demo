@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir -p /run/sshd
+
+LD_PRELOAD=/home/ketanbj/gh-abx/keyvisor/keyvisor.so ssh 127.0.0.1

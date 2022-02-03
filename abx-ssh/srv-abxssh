@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir -p /run/sshd
+
+export ABXSSHVISOR=1
+
+LD_PRELOAD=/home/ketanbj/air-box/keyvisor.so /usr/sbin/sshd -D -e
