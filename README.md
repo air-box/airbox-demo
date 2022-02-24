@@ -66,12 +66,12 @@ You can choose any configuration, certs params to serve a static website etc.  T
     
   - Configure  
     
-    1. Turn off daemon mode
+    1. Turn off daemon mode & turn on http(s) serving
     ```
     $ service nginx stop
-    $ vi /etc/nginx/nginx.conf
+    $ cp build-docker/nginx-kv/nginx.conf /etc/nginx/nginx.conf
     ```
-    Add ```daemon off``` at top of the file and save it.
+    confirm ```daemon off``` at top of the file, erro_log & sites_enabled directives.
     
     2. Add TLS configuration to use self signed certs
     ```
