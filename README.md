@@ -45,9 +45,9 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
 
 - Binary: 
   ```
-  $ mkdir -p ~/air-box/
-  $ cp build-docker/nginx-kv/keyvisor.so ~/air-box/
-  $ cp build-docker/nginx-kv/keyvisor.conf ~/air-box/
+  $ mkdir -p /opt/air-box/
+  $ cp build-docker/nginx-kv/keyvisor.so /opt/air-box/
+  $ cp build-docker/nginx-kv/keyvisor.conf /opt/air-box/
   ```
   - Edit keyvisor.conf to set external IP address of your keycentral VM for keyvisor
   ```
@@ -102,7 +102,7 @@ You can choose any configuration, certs params to serve a static website etc.  T
   $ cp keyless-demo/keyless ~/air-box/
   $ cd ~/air-box
   $ chmod +x keyless
-  $ keyless nginx
+  $ sudo ./keyless nginx
   ```
 
 8. Test from your desktop terminal 
