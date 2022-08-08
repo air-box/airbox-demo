@@ -6,7 +6,7 @@ server {
 
 	server_name keyless-demo.com www.keyless-demo.com;
 
-	root /home/ubuntu/air-box/static-html;
+	root /opt/air-box/static-html;
 	index index.html index.htm;
 }
 

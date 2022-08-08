@@ -91,7 +91,7 @@ You can choose any configuration, certs params to serve a static website etc.  T
     ```
   
   - Check vanilla nginx installation
-  ```cp -rf static-html ~/air-box/```
+  ```cp -rf static-html /opt/air-box/```
   ```$ nginx ```
   
   - Test nginx -- From your desktop terminal
