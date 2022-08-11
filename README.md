@@ -28,7 +28,7 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
   - Install pre-requisites
   ```$ cd keyless-demo && chmod +x deps.sh && ./deps.sh```
 
-4. From your keycentral VM instance (using SSH), run KeyCentral backend on VM
+3. From your keycentral VM instance (using SSH), run KeyCentral backend on VM
 
 - Binary:
   ```
@@ -41,13 +41,15 @@ Example: Nginx server w/ daemon mode off invoked from commandline in a VM:
 
 - From source: TODO (available on request)
 
-5. From your nginx-kv VM instance, install Keyless on nginx-kv VM
+4. From your nginx-kv VM instance, install Keyless on nginx-kv VM
 
 - Binary: 
   ```
-  $ mkdir -p /opt/air-box/
-  $ cp build-docker/nginx-kv/keyvisor.so /opt/air-box/
-  $ cp build-docker/nginx-kv/keyvisor.conf /opt/air-box/
+  $ sudo mkdir -p /opt/air-box/
+  $ sudo chmod 755 /opt/air-box/
+  $ sudo cp build-docker/nginx-kv/keyvisor.so /opt/air-box/
+  $ sudo cp build-docker/nginx-kv/keyvisor.conf /opt/air-box/
+  $ sudo chmod 644 /opt/air-box/
   ```
   - Edit keyvisor.conf to set external IP address of your keycentral VM for keyvisor
   ```
@@ -97,15 +99,15 @@ You can choose any configuration, certs params to serve a static website etc.  T
   - Test nginx -- From your desktop terminal
   ```$ curl -k https://<nginx-kv VM's external IP address>```
   
-6. Run Keyless nginx server
+5. Run Keyless nginx server
   ```
-  $ cp keyless-demo/keyless ~/air-box/
-  $ cd ~/air-box
-  $ chmod +x keyless
+  $ sudo cp keyless-demo/keyless /opt/air-box/
+  $ cd /opt/air-box/
+  $ sudo chmod 755 keyless
   $ sudo ./keyless nginx
   ```
 
-8. Test from your desktop terminal 
+6. Test from your desktop terminal 
 ```$ curl -k https://<nginx-kv VM's external IP address>```
 
 In both cases i.e., with vanilla nginx andd nginx with keyless, you should see the same output as below:
